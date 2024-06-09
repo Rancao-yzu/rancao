@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上传</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .uploadArea {
+            width: 60%;
+            max-width: 500px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .uploadWrapper {
+            position: relative;
+            border: 2px dashed #007bff;
+            border-radius: 8px;
+            padding: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+
+
+        .uploadWrapper:hover {
+            background-color: #f0f8ff;
+        }
+
+        .uploadWrapper i {
+            font-size: 48px;
+            color: #007bff;
+            margin-bottom: 20px;
+            animation: float 3s ease infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .uploadWrapper div {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="uploadArea" id="upload-area">
+    <div class="uploadWrapper" onclick="document.getElementById('file-input').click();" ondragover="event.preventDefault();" ondrop="handleFileDrop(event);">
+        <input type="file" id="file-input" class="file-input" multiple onchange="displayFileNames(this)">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <div>点击、拖拽上传文件</div>
+    </div>
+</div>
+
+<script>
+    function handleFileDrop(event) {
+        event.preventDefault();
+        const files = event.dataTransfer.files;
+        displayFileNames({ files });
+    }
+
+    function displayFileNames(input) {
+        const files = input.files;
+        let fileNames = "";
+        for (let i = 0; i < files.length; i++) {
+            fileNames += files[i].name + "<br>";
+        }
+        alert("上传的文件名：\n" + fileNames);
+    }
+</script>
+</body>
+</html>

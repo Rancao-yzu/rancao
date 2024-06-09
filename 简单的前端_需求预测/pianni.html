@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #f0f0f0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.check-icon {
+  display: none;
+  color: green;
+  margin-left: 10px;
+}
+
+input[type="radio"]:checked + span .check-icon {
+  display: inline;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li>
+    <label>
+      <input type="radio" name="style" value="4">
+      <span><a href="./5sjj.html">模型训练数据集介绍</a><span class="check-icon">✓</span></span>
+    </label>
+  </li>
+
+  <li>
+    <label>
+      <input type="radio" name="style" value="4">
+      <span><a href="./sjj55.html">公司财务数据及介绍</a><span class="check-icon">✓</span></span>
+    </label>
+  </li>
+</ul>
+
+</body>
+</html>
