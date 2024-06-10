@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Website title -->
+    <title>Mandela Effect - Fixed Sidebar Menu - Bootstrap 4</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+
+
+        .buttle_1 {
+            position: relative;
+            content: "";
+            background-image: url("image/shangchuan.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: auto;
+            height: 750px;
+
+        }
+
+        .buttle_2 {
+
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            padding-top: 40px;
+            /* 垂直 */
+            width: 1500px;
+            height: 1000px;
+            background-color: rgba(34, 51, 75);
+        }
+
+        .buttle_2_centre {
+            content: "";
+            background-color: white;
+            width: 1400px;
+            height: 900px;
+            padding-top: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+    <div class="overlay"></div>
+    <div class="bodys"></div>
+
+    <!-- BEGIN Wrapper -->
+    <div class="wrapper">
+
+        <!-- BEGIN Sidebar -->
+        <nav id="sidebar2">
+            <div class="admin-bar">
+                <p>&nbsp;&nbsp;Fedgnn </p>
+            </div>
+        </nav>
+
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <br /> <br /> <br />
+                <li>
+                    <ss><a href="./1home.html">首页</a></ss>
+                </li>
+
+                <br />
+
+                <li>
+                    <ss><a href="./5sjj.html">数据集示例</a></ss>
+
+                </li>
+                <br />
+
+                <li>
+                    <ss><a href="./8zdy.html">恶意用户检测</a></ss>
+                </li>
+                <br />
+
+                <li>
+                    <ss>
+                        <a href="./3bachang.html">攻防靶场</a>
+                    </ss>
+                </li>
+                <br />
+
+                <li>
+                    <ss>
+                        <a href="#pageSubmenus2" data-toggle="collapse" aria-expanded="false">用户设置</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenus2">
+                            <ss><a href="./1home1.html">登陆</a></ss>
+                            <ss><a href="./1home1.html">注册</a></ss>
+                        </ul>
+                    </ss>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+
+                <p>
+                    <ss target="_blank" href=" " title="网页模板">联系方式</ss>
+                </p>
+            </div>
+        </nav>
+        <!-- END Sidebar -->
+        <!-- BEGIN Responsive Menu Button -->
+        <nav id="sidebar-responsive" class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- Your website title here -->
+                    <h1 class="mobile-title">Mandela Effect</h1>
+                    <button type="button" id="sidebarCollapse" class="navbar-btn pull-right">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End Responsive Menu Button -->
+        <!-- BEGIN Page Content -->
+
+        <div id="content">
+
+            <div class="corner-box">
+                <br />
+                <div class="background_image2"></div>
+                <br />
+            </div>
+            <br /> <br /> <br />
+
+            <nav id="sidebar8">
+
+                <!-- 这里开始上传界面制作 -->
+
+                <div class="buttle_1">
+
+                </div>
+                <div class="fu_dong1">
+
+                    <p>文件上传</p>
+
+                </div>
+                <div class="fu_dong2">
+
+
+
+
+
+                    <div class="button_of_select">
+
+                        <table class="select">
+                            <tr>
+                                <td class="btn-file-upload1" onclick="toggleSelected(this, 'subcontent1')">文件上传</td>
+                                <td onclick="toggleSelected(this, 'subcontent2')">公共报告</td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div id="maincontent">
+
+
+                        <div id="subcontent1" class="subcontent">
+
+
+                            <div class="container1">
+                                <div class="fileListArea" id="file-list"></div>
+                                <div class="uploadArea" id="upload-area">
+                                    <div class="uploadWrapper" onclick="document.getElementById('file-input').click();"
+                                        ondragover="event.preventDefault();" ondrop="handleFileDrop(event);">
+                                        <input type="file" id="file-input" multiple onchange="displayFileNames(this)">
+                                        <div class="uploadLabel">点击、拖拽上传文件</div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div>
+                                <button class="button_load"> 上传</button>
+                            </div>
+                        </div>
+
+
+
+                        <div id="subcontent2" class="subcontent">
+
+
+
+                            <table class="table_1" style=" table-layout: fixed;width: 100%;">
+                                <tr style="background-color: rgb(237,237,237)">
+                                    <td>文件名称</td>
+                                    <td>文件类型</td>
+                                    <td>识别率</td>
+                                    <td>威胁分类</td>
+                                    <td>威胁等级</td>
+                                    <td>反馈</td>
+                                </tr>
+                                <tr style="background-color: rgb(237,237,237)">
+                                    <td>Facebook</td>
+                                    <td>txt</td>
+                                    <td>0.8157</td>
+                                    <td>黑客</td>
+                                    <td>安全</td>
+                                    <td>无</td>
+                                </tr>
+                                <tr style="background-color: rgb(237,237,237)">
+                                    <td>Twitter</td>
+                                    <td>txt</td>
+                                    <td>0.8214</td>
+                                    <td>钓鱼者</td>
+                                    <td>安全</td>
+                                    <td>无</td>
+                                </tr>
+                                <tr style="background-color: rgb(237,237,237)">
+                                    <td>Google</td>
+                                    <td>txt</td>
+                                    <td>0.8101</td>
+                                    <td>版权侵犯者</td>
+                                    <td>危险</td>
+                                    <td>存在大概恶意用户</td>
+                                </tr>
+
+
+                            </table>
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="buttle_2 ">
+                    <div class="buttle_2_centre">
+
+                        <div class="container2">
+                            <div class="select">
+
+                                <select id="dropdown">
+                                    <option value="option1">全部</option>
+                                    <option value="option2">文件名</option>
+                                    <option value="option3">文件类型</option>
+                                </select>
+                            </div>
+                            <div class="search">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                            <div class="button">
+                                <button>清除</button>
+                            </div>
+                        </div>
+                        <table class="table_1" style=" table-layout: fixed;width: 100%;">
+                            <tr style="background-color: rgb(237,237,237)">
+                                <td>文件名称</td>
+                                <td>文件类型</td>
+                                <td>识别率</td>
+                                <td>威胁分类</td>
+                                <td>威胁等级</td>
+                                <td>反馈</td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>new</td>
+                                <td>txt</td>
+                                <td>0.8059</td>
+                                <script>
+                                    setTimeout(() => {
+                                        document.querySelector('.waiting1').style.display = 'none';
+                                        document.querySelector('.done1').style.display = 'block';
+                                    }, 12000);
+                                </script>
+                                <td>
+                                    <div class="waiting1"></div>
+                                    <div class="done1 hidden1">黑客</div>
+                                </td>
+
+                                <script>
+                                    setTimeout(() => {
+                                        document.querySelector('.waiting2').style.display = 'none';
+                                        document.querySelector('.done2').style.display = 'block';
+                                    }, 12000);
+                                </script>
+
+                                <td>
+                                    <div class="waiting2"></div>
+                                    <div class="done2 hidden1">安全</div>
+                                </td>
+                                <td>无</td>
+
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+
+
+    <!-- END Page Content -->
+    <!--END Wrapper -->
+    <!-- BEGIN Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script src="js/common.js"></script>
+    <!-- END Scripts -->
+
+    <script>//点击本地上传文件
+        $('#btn').click(() => {
+            $('#fileInput').click();
+        })
+        $('#fileInput').change((event) => {
+            var files = event.target.files;
+            appendFile(files, '.list-btn');
+        })
+
+        //拖拽上传文件 在页面进行预览 上传form用到ajax
+        const dragbox = document.querySelector('.dragFile');
+        dragbox.addEventListener('dragover', function (e) {
+            e.preventDefault(); // 必须阻止默认事件
+        }, false);
+        dragbox.addEventListener('drop', function (e) {
+            e.preventDefault(); // 阻止默认事件
+            var files = e.dataTransfer.files; //获取文件
+            appendFile(files, '.list-drag')
+            // code
+        }, false);
+
+        function appendFile(files, listName) {
+            for (file of files) {
+                let url = window.URL.createObjectURL(file);
+                let liStr = `
+    <li class="list-group-item">
+        <div>
+            <img src="${url}" alt="文件" />
+        </div>
+    </li>
+    `;
+                $(listName).append(liStr);
+            }
+        }
+
+
+
+        function displayFileNames(input) {
+            var fileListArea = document.getElementById("file-list");
+
+            [].forEach.call(input.files, function (file) {
+                var fileNameElement = document.createElement("div");
+                fileNameElement.className = "fileName";
+                fileNameElement.textContent = file.name;
+                fileListArea.appendChild(fileNameElement);
+            });
+        }
+
+        function handleFileDrop(event) {
+            event.preventDefault();
+
+            var fileListArea = document.getElementById("file-list");
+
+            [].forEach.call(event.dataTransfer.files, function (file) {
+                var fileNameElement = document.createElement("div");
+                fileNameElement.className = "fileName";
+                fileNameElement.textContent = file.name;
+                fileListArea.appendChild(fileNameElement);
+            });
+        }
+
+
+        function toggleSelected(td, contentID) {
+            console.log('toggleSelected triggered');
+
+            var selectedTd = document.getElementsByClassName("selected")[0];
+            var content1 = document.getElementById("subcontent1");
+            var content2 = document.getElementById("subcontent2");
+
+            if (selectedTd) {
+                selectedTd.classList.remove("selected");
+            }
+
+            td.classList.add("selected");
+
+            if (contentID === "subcontent1") {
+                content1.style.display = "block";
+                content2.style.display = "none";
+            } else if (contentID === "subcontent2") {
+                content1.style.display = "none";
+                content2.style.display = "block";
+            }
+
+
+        }
+
+
+        setTimeout(() => {
+            document.querySelector('.waiting').style.display = 'none';
+            document.querySelector('.done').style.display = 'block';
+        }, 2000);
+
+
+
+        window.addEventListener('load', function () {
+            const td = document.querySelector('.btn-file-upload1');
+            td.click();
+        });
+    </script>
+    </header>
+
+
+
+</body>
+
+</html>
