@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业人力系统 - 查看绩效</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f4f4f9;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .container {
+            margin-left: 200px;
+            padding: 20px;
+            flex: 1;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        .topbar input {
+            padding: 5px;
+            width: 200px;
+            border: 1px solid #bdc3c7;
+            border-radius: 3px;
+        }
+        .topbar button {
+            padding: 5px 10px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .topbar button:hover {
+            background-color: #2980b9;
+        }
+        .topbar .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .topbar .user-info i {
+            margin-left: 10px;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        .chart {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .feedback-form textarea {
+            width: 98.5%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 3px;
+        }
+        .feedback-form button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .feedback-form button:hover {
+            background-color: #2980b9;
+        }
+        .help-support ul {
+            padding: 0;
+            list-style: none;
+        }
+        .help-support ul li {
+            margin-bottom: 10px;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom:20px ;
+        }
+        .performance-overview, .pie-chart-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 49%;
+            box-sizing: border-box;
+        }
+        .pie-chart {
+            width: 100%;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <a href="#"><i class="fas fa-home"></i> 首页</a>
+    <a href="./查看绩效.html"><i class="fas fa-user"></i> 查看绩效</a>
+    <a href="./优秀员工.html"><i class="fas fa-chart-bar"></i> 优秀员工</a>
+    <a href="./登录.html"><i class="fas fa-cog"></i> 登录</a>
+</div>
+<div class="container">
+    <div class="topbar">
+        <h2>企业人力系统</h2>
+        <div class="user-info">
+            <input type="text" id="search-input" placeholder="搜索员工工作号...">
+            <button onclick="searchEmployee()">查询</button>
+            <i class="fas fa-user-circle fa-2x"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div class="flex-container">
+            <div class="performance-overview">
+                <h2>绩效概览</h2>
+                <p>姓名: <span id="employee-name"></span></p>
+                <p>工作号: <span id="employee-id"></span></p>
+                <p>所在部门: <span id="employee-department"></span></p> <!-- 添加所在部门 -->
+                <p>当前绩效总分: <span id="employee-score"></span></p>
+                <p>当前排名: <span id="employee-rank"></span></p>
+                <p>评价等级: <span id="employee-grade"></span></p>
+            </div>
+            <div class="pie-chart-container">
+                <div id="department-pie-chart" class="pie-chart"></div>
+            </div>
+        </div>
+        <div class="section performance-details">
+            <h2>绩效详情</h2>
+            <div id="chart1" class="chart"></div>
+            <div id="chart2" class="chart"></div>
+        </div>
+        <div class="section historical-comparison">
+            <h2>历史绩效对比</h2>
+            <div id="chart3" class="chart"></div>
+        </div>
+        <div class="section feedback-support">
+            <h2>反馈与申诉</h2>
+            <form class="feedback-form">
+                <textarea rows="5" placeholder="在此提交对绩效评价的疑问或申诉..."></textarea>
+                <button type="submit">提交</button>
+            </form>
+        </div>
+        <div class="section help-support">
+            <h2>帮助与支持</h2>
+            <p>如有疑问，请参阅相关帮助文档或联系技术支持：</p>
+            <ul>
+                <li>技术支持电话：123-456-7890</li>
+                <li>技术支持邮箱：support@example.com</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var employees = {
+        '1001': {
+            name: '张三',
+            department: '开发部', // 添加部门信息
+            score: 90,
+            rank: 3,
+            grade: '优秀',
+            performance: {
+                current: [85, 90, 80, 95],
+                previous: [88, 92, 85, 94],
+                history: [80, 82, 90, 95, 95, 89, 84, 80]
+            }
+        },
+        '1002': {
+            name: '李四',
+            department: '销售部', // 添加部门信息
+            score: 85,
+            rank: 5,
+            grade: '良好',
+            performance: {
+                current: [75, 80, 78, 85],
+                previous: [70, 75, 80, 82],
+                history: [70, 72, 75, 78, 80, 82, 85, 88]
+            }
+        },
+        '1003': {
+            name: '王五',
+            department: '市场部',
+            score: 88,
+            rank: 2,
+            grade: '良好',
+            performance: {
+                current: [82, 88, 85, 90],
+                previous: [80, 85, 82, 88],
+                history: [78, 80, 85, 88, 90, 92, 87, 84]
+            }
+        },
+        '1004': {
+            name: '赵六',
+            department: '人事部',
+            score: 78,
+            rank: 8,
+            grade: '一般',
+            performance: {
+                current: [72, 78, 75, 80],
+                previous: [70, 72, 78, 74],
+                history: [68, 70, 72, 75, 78, 80, 75, 72]
+            }
+        },
+        '1005': {
+            name: '钱七',
+            department: '财务部',
+            score: 82,
+            rank: 4,
+            grade: '良好',
+            performance: {
+                current: [80, 82, 78, 85],
+                previous: [78, 80, 82, 79],
+                history: [75, 78, 80, 82, 84, 85, 80, 78]
+            }
+        },
+        '1006': {
+            name: '孙八',
+            department: '技术部',
+            score: 92,
+            rank: 1,
+            grade: '优秀',
+            performance: {
+                current: [90, 92, 88, 95],
+                previous: [88, 90, 92, 89],
+                history: [85, 88, 90, 92, 95, 94, 90, 88]
+            }
+        }
+    };
+
+    function searchEmployee() {
+        var employeeId = document.getElementById('search-input').value;
+        var employee = employees[employeeId];
+        if (employee) {
+            document.getElementById('employee-name').textContent = employee.name;
+            document.getElementById('employee-id').textContent = employeeId;
+            document.getElementById('employee-department').textContent = employee.department; // 显示部门信息
+            document.getElementById('employee-score').textContent = employee.score;
+            document.getElementById('employee-rank').textContent = employee.rank;
+            document.getElementById('employee-grade').textContent = employee.grade;
+            updateCharts(employee.performance);
+            updateDepartmentPieChart(); // 更新部门人数比例的扇形图
+        } else {
+            alert('未找到该员工的绩效信息');
+        }
+    }
+
+    function updateDepartmentPieChart() {
+        var departmentData = {
+            '开发部': 30,
+            '销售部': 25,
+            '市场部': 20,
+            '人事部': 15,
+            '财务部': 10
+        };
+
+        var pieChart = echarts.init(document.getElementById('department-pie-chart'));
+
+        var option = {
+            title: {
+                text: '部门人数比例',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: Object.keys(departmentData)
+            },
+            series: [
+                {
+                    name: '部门人数比例',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '20',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: Object.keys(departmentData).map(function (key) {
+                        return { value: departmentData[key], name: key };
+                    })
+                }
+            ]
+        };
+
+        pieChart.setOption(option);
+    }
+
+    function updateCharts(performance) {
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        var chart2 = echarts.init(document.getElementById('chart2'));
+        var chart3 = echarts.init(document.getElementById('chart3'));
+
+        var option1 = {
+            title: {
+                text: '绩效指标1',
+                left: 'center'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ["指标A", "指标B", "指标C", "指标D"]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '得分',
+                type: 'bar',
+                data: performance.current,
+                itemStyle: {
+                    color: '#3498db'
+                }
+            }]
+        };
+
+        var option2 = {
+            title: {
+                text: '绩效指标2',
+                left: 'center'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ["指标A", "指标B", "指标C", "指标D"]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '得分',
+                type: 'bar',
+                data: performance.previous,
+                itemStyle: {
+                    color: '#2ecc71'
+                }
+            }]
+        };
+
+        var option3 = {
+            title: {
+                text: '历史绩效对比',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['2022年', '2023年'],
+                bottom: 0
+            },
+            xAxis: {
+                type: 'category',
+                data: ["第一季度", "第二季度", "第三季度", "第四季度"]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '2022年',
+                    type: 'line',
+                    data: performance.history.slice(0, 4),
+                    itemStyle: {
+                        color: '#e74c3c'
+                    }
+                },
+                {
+                    name: '2023年',
+                    type: 'line',
+                    data: performance.history.slice(4),
+                    itemStyle: {
+                        color: '#8e44ad'
+                    }
+                }
+            ]
+        };
+
+        chart1.setOption(option1);
+        chart2.setOption(option2);
+        chart3.setOption(option3);
+    }
+</script>
+</body>
+</html>

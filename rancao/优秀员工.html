@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业人力系统 - 优秀员工</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .container {
+            margin-left: 200px;
+            padding: 20px;
+            flex: 1;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .employee-list-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .employee-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .employee-item {
+            width: 20%; /* 每个项目占据20%的宽度 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .employee-item img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .employee-item h3 {
+            margin: 0;
+            cursor: pointer;
+        }
+        .employee-details, .recommend-form {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .employee-details img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .employee-details h2, .employee-details p {
+            margin: 5px 0;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .comment img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .comment p {
+            margin: 0;
+        }
+        .like-btn, .comment-btn {
+            margin-right: 10px;
+            cursor: pointer;
+            color: #3498db;
+        }
+        .like-btn:hover, .comment-btn:hover {
+            color: #2980b9;
+        }
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .comment-form textarea {
+            width: 98.5%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .comment-form button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .recommend-form input, .recommend-form textarea {
+            width: 98.5%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .recommend-form button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .recommend-form button:hover {
+            background-color: #2980b9;
+        }
+        .employee-list-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .employee-card {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .employee-info {
+            flex: 1;
+        }
+        .employee-photo {
+            margin-right: 20px;
+        }
+        .employee-photo img {
+            width: 300px; /* 根据需要调整图片大小 */
+            height: 370px; /* 根据需要调整图片大小 */
+            border-radius: 50%; /* 使图片呈圆形 */
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <a href="#"><i class="fas fa-home"></i> 首页</a>
+    <a href="./查看绩效.html"><i class="fas fa-user"></i> 查看绩效</a>
+    <a href="./优秀员工.html"><i class="fas fa-chart-bar"></i> 优秀员工</a>
+    <a href="./登录.html"><i class="fas fa-cog"></i> 登录</a>
+</div>
+<div class="container">
+    <div class="topbar">
+        <h2>企业人力系统 - 优秀员工</h2>
+        <div class="user-info">
+            <i class="fas fa-user-circle fa-2x"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div class="employee-list-container">
+            <h2 class="employee-list-title">优秀员工列表</h2>
+            <div class="employee-list">
+            <!-- 第一行 -->
+                <div class="employee-item" onclick="showEmployeeDetails('1001')">
+                    <img src="https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/lianghua-detail-2024.jpg" alt="员工照片">
+                    <h3>张三 - 技术部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1002')">
+                    <img src="https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/yingweimin-detail-2024.jpg" alt="员工照片">
+                    <h3>李四 - 市场部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1003')">
+                    <img src="https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/yangchaobin-detail.jpg" alt="员工照片">
+                    <h3>王五 - 运营部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1004')">
+                    <img src="https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/houjinlong-detail.jpg" alt="员工照片">
+                    <h3>赵六 - 财务部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1005')">
+                    <img src="https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/zhajun-detail.jpg" alt="员工照片">
+                    <h3>钱七 - 销售部</h3>
+                </div>
+            <!-- 第二行 -->
+                <div class="employee-item" onclick="showEmployeeDetails('1006')">
+                    <img src="https://shunwei.com/wp-content/uploads/2021/08/m71c2il9-480x720.jpeg" alt="员工照片">
+                    <h3>孙八 - 技术部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1007')">
+                    <img src="https://shunwei.com/wp-content/uploads/2018/07/WechatIMG475-480x720.jpeg" alt="员工照片">
+                    <h3>周九 - 市场部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1008')">
+                    <img src="https://shunwei.com/wp-content/uploads/2023/12/yk8djk8_-480x720.jpg" alt="员工照片">
+                    <h3>吴十 - 技术部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1009')">
+                    <img src="https://shunwei.com/wp-content/uploads/2019/11/caokr1lq-480x720.jpeg" alt="员工照片">
+                    <h3>朱十一 - 运营部</h3>
+                </div>
+                <div class="employee-item" onclick="showEmployeeDetails('1010')">
+                    <img src="https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/mengwanzhou-detail.jpg" alt="员工照片">
+                    <h3>丁十二 - 财务部</h3>
+                </div>
+            </div>
+        </div>
+        <div class="employee-card" id="employee-card">
+            <div class="employee-photo">
+                <img src="https://shunwei.com/wp-content/uploads/2018/07/sw-team-leijun-2.jpg" alt="员工照片" id="employee-photo">
+            </div>
+            <div class="employee-info">
+                <h2 id="employee-name">姓名</h2>
+                <p>工作号: <span id="employee-id">ID</span></p>
+                <p>部门: <span id="employee-department">部门</span></p>
+                <p>职位: <span id="employee-position">职位</span></p>
+                <p>个人简介: <span id="employee-bio">个人简介</span></p>
+                <p>优秀事迹: <span id="employee-achievements">优秀事迹</span></p>
+                <p>获奖记录: <span id="employee-awards">获奖记录</span></p>
+                <div class="like-comment">
+                    <span class="like-btn" onclick="likeEmployee('1001')"><i class="fas fa-thumbs-up"></i> 点赞</span>
+                    <span class="like-count" id="like-count-1001">0</span>
+                </div>
+                <div class="comments" id="comments">
+                <!-- 评论列表 -->
+                </div>
+                <form class="comment-form" onsubmit="submitComment(event)">
+                    <textarea rows="3" placeholder="发表评论..."></textarea>
+                    <button type="submit">提交评论</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="recommend-form">
+            <h2>推荐优秀员工</h2>
+            <input type="text" placeholder="被推荐人姓名" id="recommend-name">
+            <input type="text" placeholder="被推荐人工号" id="recommend-id">
+            <textarea rows="3" placeholder="推荐理由" id="recommend-reason"></textarea>
+            <button onclick="submitRecommendation()">提交推荐</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var employees = {
+        "1001": {
+            name: "张三",
+            department: "技术部",
+            position: "高级工程师",
+            bio: "张三是技术部的高级工程师，拥有超过十年的开发经验。他擅长多种编程语言，包括Java、Python、C++等，并且对前端技术如HTML、CSS、JavaScript也有深入的了解。" +
+                "张三在软件开发领域具有丰富的实践经验，参与过多个大型项目的开发，包括移动应用、Web应用和桌面应用。",
+            achievements: "张三成功领导了一项创新性项目，该项目旨在开发一种新型的云计算服务平台。他不仅负责设计了整个系统的架构，还带领团队解决了多个技术难题，" +
+                "最终使得该平台在市场上获得了巨大的成功，为公司带来了新的收入来源。张三注意到公司的一些老旧系统存在性能瓶颈，他主动提出并实施了一套全面的系统优化方案。" +
+                "通过重构代码、引入新的缓存机制和数据库优化策略，他成功地将系统的响应时间缩短了50%，显著提高了用户体验和工作效率。",
+            awards: "2019年优秀员工，2020年技术创新奖。",
+            photo: "https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/lianghua-detail-2024.jpg"
+        },
+        "1002": {
+            name: "李四",
+            department: "市场部",
+            position: "市场经理",
+            bio: "李四是市场部的市场经理，擅长市场分析和策略制定。",
+            achievements: "成功策划并执行多次大型市场活动，显著提升了品牌知名度。",
+            awards: "2019年最佳策划奖，2020年市场先锋奖。",
+            photo: "https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/yingweimin-detail-2024.jpg"
+        },
+        "1003": {
+            name: "王五",
+            department: "运营部",
+            position: "运营总监",
+            bio: "王五是运营部的运营总监，负责公司运营管理和流程优化。",
+            achievements: "优化了公司的运营流程，提高了工作效率和客户满意度。",
+            awards: "2020年优秀运营奖。",
+            photo: "https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/yangchaobin-detail.jpg"
+        },
+        "1004": {
+            name: "赵六",
+            department: "财务部",
+            position: "财务总监",
+            bio: "赵六是财务部的财务总监，精通财务分析和资金管理。",
+            achievements: "有效管理公司财务，保障了资金的安全和合理使用。",
+            awards: "2018年最佳财务奖，2020年杰出贡献奖。",
+            photo: "https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/houjinlong-detail.jpg"
+        },
+        "1005": {
+            name: "钱七",
+            department: "销售部",
+            position: "销售经理",
+            bio: "钱七是销售部的销售经理，负责销售团队和销售策略的制定。",
+            achievements: "带领销售团队取得了多个季度销售冠军，实现了销售目标。",
+            awards: "2019年销售精英奖，2020年销售领袖奖。",
+            photo: "https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/zhajun-detail.jpg"
+        },
+        "1006": {
+            name: "孙八",
+            department: "技术部",
+            position: "软件工程师",
+            bio: "孙八是技术部的软件工程师，专注于前端开发和用户界面设计。",
+            achievements: "开发了多个用户友好的软件产品，受到客户好评。",
+            awards: "2018年最佳新人奖。",
+            photo: "https://shunwei.com/wp-content/uploads/2021/08/m71c2il9-480x720.jpeg"
+        },
+        "1007": {
+            name: "周九",
+            department: "市场部",
+            position: "市场专员",
+            bio: "周九是市场部的市场专员，协助市场经理执行市场策略。",
+            achievements: "成功推广了多个新产品，扩展了市场份额。",
+            awards: "2019年市场推广奖。",
+            photo: "https://shunwei.com/wp-content/uploads/2018/07/WechatIMG475-480x720.jpeg"
+        },
+        "1008": {
+            name: "吴十",
+            department: "技术部",
+            position: "数据库管理员",
+            bio: "吴十是技术部的数据库管理员，负责数据库的管理和优化。",
+            achievements: "提高了数据库的性能和稳定性，支持了公司业务的发展。",
+            awards: "2020年最佳数据管理奖。",
+            photo: "https://shunwei.com/wp-content/uploads/2023/12/yk8djk8_-480x720.jpg"
+        },
+        "1009": {
+            name: "朱十一",
+            department: "运营部",
+            position: "运营经理",
+            bio: "朱十一是运营部的运营经理，管理和协调公司日常运营活动。",
+            achievements: "优化了公司的物流配送系统，提高了运营效率。",
+            awards: "2019年优秀运营经理奖。",
+            photo: "https://shunwei.com/wp-content/uploads/2019/11/caokr1lq-480x720.jpeg"
+        },
+        "1010": {
+            name: "丁十二",
+            department: "财务部",
+            position: "财务分析师",
+            bio: "丁十二是财务部的财务分析师，专注于财务数据分析和预算编制。",
+            achievements: "提供了准确的财务预测和分析报告，支持了公司决策。",
+            awards: "2020年最佳财务分析师奖。",
+            photo: "https://www-file.huawei.com/-/media/corp2020/images/excecutives/board-of-directors/mengwanzhou-detail.jpg"
+        }
+    };
+
+    function showEmployeeDetails(employeeId) {
+        var employee = employees[employeeId];
+        document.getElementById("employee-name").textContent = employee.name;
+        document.getElementById("employee-id").textContent = employeeId;
+        document.getElementById("employee-department").textContent = employee.department;
+        document.getElementById("employee-position").textContent = employee.position;
+        document.getElementById("employee-bio").textContent = employee.bio;
+        document.getElementById("employee-achievements").textContent = employee.achievements;
+        document.getElementById("employee-awards").textContent = employee.awards;
+
+
+        document.getElementById('employee-photo').src = employee.photo;
+        console.log("employee.photo:", employee.photo); // 添加这行代码
+
+    }
+
+    function likeEmployee(employeeId) {
+        var likeCountElement = document.getElementById("like-count-" + employeeId);
+        var currentLikes = parseInt(likeCountElement.textContent);
+        likeCountElement.textContent = currentLikes + 1;
+    }
+
+    function submitComment(event) {
+        event.preventDefault(); // Prevent form submission
+        var commentText = event.target.querySelector("textarea").value;
+        var commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.innerHTML = `
+            <img src="image/11.jfif" >
+            <p>${commentText}</p>
+        `;
+        document.getElementById("comments").appendChild(commentDiv);
+        event.target.querySelector("textarea").value = ""; // Clear textarea after submission
+    }
+
+    console.log("Submit recommendation button clicked");
+
+    function submitRecommendation() {
+        var name = document.getElementById('recommend-name').value;
+        var id = document.getElementById('recommend-id').value;
+        var reason = document.getElementById('recommend-reason').value;
+        if (name && id && reason) {
+            alert("推荐提交成功！");
+            document.getElementById('recommend-name').value = '';
+            document.getElementById('recommend-id').value = '';
+            document.getElementById('recommend-reason').value = '';
+        } else {
+            alert("请填写完整推荐信息！");
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

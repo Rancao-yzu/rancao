@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Website title -->
+    <title>企业人力</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/plotly-latest.min.js"></script>
+    <meta charset="UTF-8">
+
+    <style>
+
+        .stat-icon {
+          font-size: 34px; /* 设置图标大小 */
+          color: #7b6ccb; /* 设置图标颜色，这是Facebook的官方蓝色 */
+          /* 其他样式可以根据需要添加 */
+        }
+        .background_image2 { /* 右上块状元素的基础图片 */
+            content: "";
+            position: absolute;
+            top: 15px;
+            left:495px;
+            right: 0;
+            bottom: 0;
+            background-image:url('image/A.png');
+            background-repeat: no-repeat;
+            width: 1116px;
+            height: 155px;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 58px;
+            background: url('image/tzdx.png') no-repeat ;
+            top: 10px;
+            left:20px;
+            position: absolute;
+            background-size: contain; /* 保持图片宽高比，完全显示在元素内 */
+            z-index: 1;
+        }
+
+        .background_image2s {
+            position: absolute;
+            top: 645px;
+            left: 515px;
+            right: 0;
+            bottom: 0;
+            width: 900px; /* 缩小宽度 */
+            height: 500px; /* 缩小高度 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+            background: #fff;
+            z-index: 1;
+        }
+        .background_image2ss {
+            position: absolute;
+            top: 115px;
+            left: 5px;
+            right: 0;
+            bottom: 0;
+            width: 900px;
+            height: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+            background: #fff;
+            z-index: 1;
+        }
+
+
+        .admin-bar40 {
+            padding: 160px 35px 0px 950px;
+            color: black;
+        }
+
+        .admin-bar400 {
+            padding: 160px 1035px 0px 50px;
+            color: black;
+        }
+
+        p1 {
+            text-align-last: justify;
+            font-size: 26px;
+            font-weight: 430;
+            line-height: 1.5em;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+<div class="head">
+    <div class="overlay"></div>
+    <div class="logo w1200"></div>
+</div>
+<div class="bodys"></div>
+
+<!-- BEGIN Wrapper -->
+<div class="wrapper">
+
+
+    <nav id="sidebar">
+        <ul class="list-unstyled components">
+            <br /> <br /> <br />
+            <li>
+                <ss><a href="首页.html">首页</a></ss>
+            </li>
+
+            <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus2" data-toggle="collapse" aria-expanded="false">用户设置</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus2">
+                        <ss><a href="登录.html">登陆</a></ss>
+                        <ss><a href="登录.html">注册</a></ss>
+                    </ul>
+                </ss>
+            <li>
+                <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus" data-toggle="collapse" aria-expanded="false">基础建模</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus">
+                        <ss><a href="员工录入.html">员工信息录入</a></ss>
+                        <ss><a href="订单录入.html">公司订单录入</a></ss>
+                        <ss><a href="财报录入.html">企业财报录入</a></ss>
+                    </ul>
+                </ss>
+            </li>
+            <br />
+            <li>
+                <ss><a href="文件上传.html">人力预测</a></ss>
+            </li>
+            <br />
+
+            <li>
+                <ss><a href="数据集1.html">数据集展示</a></ss>
+
+            </li>
+
+
+            <br />
+
+            <li>
+                <ss><a href="员工离职倾向.html">数据拟合</a></ss>
+            </li>
+            <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus55" data-toggle="collapse" aria-expanded="true">趋势预测</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus55">
+                        <ss><a href="模型对比.html">模型比较</a></ss>
+                        <ss><a href="月度预测.html">月度预测</a></ss>
+                        <ss><a href="年度预测.html">年度预测</a></ss>
+                    </ul>
+                </ss>
+            </li>
+
+        </ul>
+        <div class="sidebar-footer">
+            <p class="social-icons">
+                <a target="_blank" href="#"><i class="fa fa-youtube"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-soundcloud"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+            </p>
+            <p>
+                <ss target="_blank" href=" " title="网页模板">联系方式</ss>
+            </p>
+        </div>
+    </nav>
+
+    <div id="content">
+
+
+        <div class="corner-box">
+            <br />
+            <div class="background_image2"></div>
+            <br />
+        </div>
+        <br />
+
+
+        <br /> <br />
+
+
+        <nav id="sidebar33">
+            <div class="item">
+                <label class="type">
+                    <input type="radio" class="radio" name="style" value="4">
+                    <span><a href="员工离职倾向.html">员工离职倾向</a>
+                         <div class="stat-icon dib"><i class="fa fa-rocket" aria-hidden="true"></i></i></div>
+                        <i class="check-icon">
+                    </i></span>
+                    <br />
+                </label>
+            </div>
+
+            <div class="item">
+                <label class="type">
+                    <input type="radio" class="radio" name="style" value="4">
+                    <span><a href="./效益曲线.html">效益曲线&nbsp</a>
+                         <div class="stat-icon dib"><i class="fa fa-usd" aria-hidden="true"></i></div>
+                        <i class="check-icon"></i>
+                    </span>
+                    <br />
+                </label>
+            </div>
+            <div class="item">
+                <label class="type">
+                    <input type="radio" class="radio" name="style" value="4">
+                    <span><a href="人力预测.html">人力预测</a>
+                          <div class="stat-icon dib"><i class="fa fa-address-book" aria-hidden="true"></i></i></div>
+                        <i class="check-icon"></i>
+                    </span>
+                    <br />
+                </label>
+            </div>
+
+            <br />  <br/>
+            <div class="admin-bar40">
+
+
+                <div><p1>
+                    &emsp; &emsp;企业财报和订单数据是企业管理中至关重要的信息来源。
+                </p1></div>
+                <div><p1>
+                    &emsp; &emsp;财报提供了关于企业财务状况的详尽报告，包括资产负债情况、利润状况以及现金流量等重要指标，从而为企业提供了全面的财务健康状况
+                </p1></div>
+
+                <div><p1></p1></div>
+                <div> <p1> &emsp; &emsp;订单数据则反映了市场对企业产品或服务的需求情况，能够帮助企业更好地了解市场趋势和产品需求。</p1></div>
+            </div>
+
+
+            <div class="admin-bar400">
+
+                <div><p1>
+                    &emsp;&emsp;通过对这两个数据源进行分析，我们可以获得企业的净收入曲线。净收入曲线展示了企业经营活动中实际获得的收入减去成本和费用后
+                    的余额，是衡量企业盈利能力的重要指标。
+                </p1></div>
+                <div><p1>
+                    &emsp;&emsp;通过综合分析净收入曲线，企业可以更好地理解自身的经营状况，及时调整经营策略，优化资源配置，提高盈利能力和竞争力。
+                </p1></div>
+
+            </div>
+
+
+
+
+            <br /> <br /> <br />
+            <div id="chart1" class="background_image2ss"></div>
+            <div id="chart2" class="background_image2s"></div>
+
+            <script>
+                // 创建企业净收入产出曲线图数据
+                var dates = ['2021-01-01', '2021-02-01','2021-03-01','2021-04-01','2021-05-01','2021-06-01',
+                    '2021-07-01', '2021-08-01','2021-09-01','2021-10-01','2021-11-01','2021-12-01',
+                    '2022-01-01', '2022-02-01','2022-03-01','2022-04-01','2022-05-01','2022-06-01',
+                    '2022-07-01', '2022-08-01','2022-09-01','2022-10-01','2022-11-01','2022-12-01',
+                    '2023-01-01', '2023-02-01','2023-03-01','2023-04-01','2023-05-01','2023-06-01',
+                    '2023-07-01', '2023-08-01','2023-09-01','2023-10-01','2023-11-01','2023-12-01',
+                    '2024-01-01'];
+                var revenues = [27047, 30108, 40000, 37000, 42013, 45000,
+                    36169, 39437, 36818, 33595, 34370, 36976,
+                    21204, 33335, 33412, 24207, 22578 , 26308,
+                    23637, 25701, 24386, 29883, 21020, 22088,
+                    15251, 23260, 17012, 19396, 24312, 13918,
+                    29359, 21684, 27098, 22957, 24469, 28752,
+                    35000, ];
+
+                var data1 = [{
+                    x: [],
+                    y: [],
+                    mode: 'lines+markers',
+                    marker: { color: 'blue' },
+                    line: { shape: 'linear' }
+                }];
+
+                var layout1 = {
+                    title: '企业净收入产出曲线',
+                    xaxis: {
+                        title: '日期'
+                    },
+                    yaxis: {
+                        title: '净收入'
+                    }
+                };
+
+                // 绘制企业净收入产出曲线图
+                Plotly.newPlot('chart1', data1, layout1);
+
+                // 动态绘制企业净收入产出曲线图效果
+                var cnt1 = 0;
+                var interval1 = setInterval(function() {
+                    if(cnt1 < dates.length) {
+                        Plotly.extendTraces('chart1', {
+                            x: [[dates[cnt1]]],
+                            y: [[revenues[cnt1]]]
+                        }, [0]);
+                        cnt1++;
+                    } else {
+                        clearInterval(interval1);
+                    }
+                }, 50); // 每100毫秒添加一个数据点
+
+                // 创建行业内部效益曲线图数据
+                var companies = ['公司1', '公司2', '公司3', '公司4', '公司5', '公司6',
+                    '公司7', '公司8', '公司9', '公司10', '公司11', '公司12',
+                    '公司13', '公司14', '公司15', '公司16', '公司17', '公司18',
+                    '公司19', '公司20'];
+                var profits = [-13.9337, 59.6772, -8.8793, 15.2886, -17.211, -19.6525,
+                    69.8582, 25.4687, 21.7407, 4.2399, 1.6456, 49.5156, -4.5465, 48.9029,
+                    -5.9335, 8.0359, 26.7379, -2.0986, 14.1102, 9.3347];
+                var avg_profit = 14.11505;  // 平均利润
+
+                var data2 = [{
+                    x: [],
+                    y: [],
+                    mode: 'lines+markers',
+                    marker: { color: 'blue' },
+                    line: { shape: 'linear' },
+                    name: '月公司利润（万）'
+                },
+                    {
+                        x: companies,
+                        y: Array(companies.length).fill(avg_profit),
+                        mode: 'lines',
+                        line: { color: 'red', dash: 'dash' },
+                        name: `行业平均月利润（万）， ${avg_profit}`
+                    }];
+
+                var layout2 = {
+                    title: '行业内部效益输出曲线',
+                    xaxis: {
+                        title: '公司'
+                    },
+                    yaxis: {
+                        title: '月利润（万）'
+                    },
+
+                };
+
+                // 绘制行业内部效益曲线图
+                Plotly.newPlot('chart2', data2, layout2);
+
+                // 动态绘制行业内部效益曲线图效果
+                var cnt2 = 0;
+                var interval2 = setInterval(function() {
+                    if(cnt2 < companies.length) {
+                        data2[0].x.push(companies[cnt2]);
+                        data2[0].y.push(profits[cnt2]);
+                        Plotly.update('chart2', data2, layout2);
+                        cnt2++;
+                    } else {
+                        clearInterval(interval2);
+                    }
+                }, 100); // 每100毫秒添加一个数据点
+            </script>
+        </nav>
+
+    </div>
+</div>
+
+
+<!-- END Page Content -->
+<!--END Wrapper -->
+<!-- BEGIN Scripts -->
+<script src="js/jquery.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/perfect-scrollbar.min.js"></script>
+<script src="js/common.js"></script>
+<!-- END Scripts -->
+
+</body>
+
+</html>

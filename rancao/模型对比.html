@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Website title -->
+    <title>企业人力</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+
+        .chart-container {
+            position: absolute;
+            width: 850px;
+            height: 650px;
+        }
+        #chart1-container {
+            top: 295px;
+            left: 25px;
+        }
+        #chart2-container {
+            top: 845px; /* chart1 295px + 500px (height) + 50px (margin) */
+            left: 25px;
+        }
+        #chart3-container {
+            top: 1395px; /* chart2 845px + 500px (height) + 50px (margin) */
+            left: 25px;
+        }
+        #chart4-container {
+            top: 1945px; /* chart3 1395px + 500px (height) + 50px (margin) */
+            left: 25px;
+        }
+        .background_image2 { /* 右上块状元素的基础图片 */
+            content: "";
+            position: absolute;
+            top: 15px;
+            left:495px;
+            right: 0;
+            bottom: 0;
+            background-image:url('image/A.png');
+            background-repeat: no-repeat;
+            width: 1116px;
+            height: 155px;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 58px;
+            background: url('image/tzdx.png') no-repeat ;
+            top: 10px;
+            left:20px;
+            position: absolute;
+            background-size: contain; /* 保持图片宽高比，完全显示在元素内 */
+            z-index: 1;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+<div class="head">
+    <div class="overlay"></div>
+    <div class="logo w1200"></div>
+</div>
+<div class="bodys"></div>
+
+<!-- BEGIN Wrapper -->
+<div class="wrapper">
+
+    <!-- BEGIN Sidebar -->
+    <nav id="sidebar2">
+        <div class="admin-bar">
+        </div>
+    </nav>
+
+    <nav id="sidebar">
+        <ul class="list-unstyled components">
+            <li>
+                <br /> <br /> <br />
+                <ss><a href="首页.html">首页</a></ss>
+            </li>
+
+            <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus2" data-toggle="collapse" aria-expanded="false">用户设置</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus2">
+                        <ss><a href="登录.html">登陆</a></ss>
+                        <ss><a href="登录.html">注册</a></ss>
+                    </ul>
+                </ss>
+            <li>
+                <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus" data-toggle="collapse" aria-expanded="false">基础建模</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus">
+                        <ss><a href="员工录入.html">员工信息录入</a></ss>
+                        <ss><a href="订单录入.html">公司订单录入</a></ss>
+                        <ss><a href="财报录入.html">企业财报录入</a></ss>
+                    </ul>
+                </ss>
+            </li>
+            <br />
+            <li>
+                <ss><a href="文件上传.html">人力预测</a></ss>
+            </li>
+            <br />
+
+            <li>
+                <ss><a href="数据集1.html">数据集展示</a></ss>
+
+            </li>
+
+
+            <br />
+
+            <li>
+                <ss><a href="员工离职倾向.html">数据拟合</a></ss>
+            </li>
+            <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus55" data-toggle="collapse" aria-expanded="true">趋势预测</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus55">
+                        <ss><a href="./模型对比.html">模型比较</a></ss>
+                        <ss><a href="月度预测.html">月度预测</a></ss>
+                        <ss><a href="年度预测.html">年度预测</a></ss>
+                    </ul>
+                </ss>
+            </li>
+
+        </ul>
+        <div class="sidebar-footer">
+            <p class="social-icons">
+                <a target="_blank" href="#"><i class="fa fa-youtube"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-soundcloud"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+            </p>
+            <p>
+                <ss target="_blank" href=" " title="网页模板">联系方式</ss>
+            </p>
+        </div>
+    </nav>
+
+    <div id="content">
+
+
+        <div class="corner-box">
+            <br />
+            <div class="background_image2"></div>
+            <br />
+        </div>
+        <br />
+
+
+        <br /> <br />
+
+
+        <nav id="sidebar33">
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa fa-soundcloud"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">2023年总利润</div>
+                                <div class="stat-digit">221,012</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa fa-facebook"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">总员工</div>
+                                <div class="stat-digit">161</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa fa-twitter"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">经营项目</div>
+                                <div class="stat-digit">25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa fa-google-plus"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">资金储备</div>
+                                <div class="stat-digit">3,242,781</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">模型对比图表</h3>
+                </div>
+            </div>
+
+            <br /> <br />         <br /> <br />      <br /> <br />
+            <div class="row">
+
+                <div class="card4">
+                    <div class="stat-text"><p1>人力预测模型RMSE比较结果</p1></div>
+                    <div class="stat-digit"><P>从图表中可以看出，LSTM和随机森林混合模型的均方根误差最小，为1.5357，表明其预测效果最好。
+                        相比之下，SRIMA模型的均方根误差最大，为4.3073，可能需要进一步调整或考虑其他因素以提高其预测准确性。</P></div>
+                </div>
+
+            </div>
+
+            <br /> <br />         <br /> <br />   <br /> <br />   <br /> <br />    <br /> <br />         <br /> <br />      <br /> <br />
+            <div class="row">
+
+                <div class="card4">
+                    <div class="stat-text"><p1>人力预测模型Acc比较结果</p1></div>
+                    <div class="stat-digit"><P>从图表中可以看出，LSTM和随机森林混合模型的准确率最大，为0.861，表明其预测效果最好。
+                        相比之下，SRIMA模型的准确率最小，为0.611，可能需要进一步调整或考虑其他因素以提高其预测准确性。</P></div>
+                </div>
+            <br /> <br />         <br /> <br />  <br />     <br /> <br />    <br /> <br />         <br /> <br />      <br /> <br />
+            <div class="row">
+
+               <div class="card4">
+                   <div class="stat-text"><p1>效益预测模型RMSE比较结果</p1></div>
+                   <div class="stat-digit"><P>从图表中可以看出，LSTM和随机森林混合模型的均方根误差最小，为3.0598，表明其预测效果最好。
+                        相比之下，SRIMA模型的均方根误差最大，为6.1581，可能需要进一步调整或考虑其他因素以提高其预测准确性。</P></div>
+               </div>
+
+            </div>
+            <br /> <br />         <br /> <br /> <br />      <br /> <br />    <br /> <br />         <br /> <br />      <br /> <br />
+            <div class="row">
+
+                <div class="card4">
+                    <div class="stat-text"><p1>效益预测模型Acc比较结果</p1></div>
+                    <div class="stat-digit"><P>从图表中可以看出，LSTM和随机森林混合模型的准确率最大，为0.895，表明其预测效果最好。
+                         相比之下，SRIMA模型的准确率最小，为0.641，可能需要进一步调整或考虑其他因素以提高其预测准确性。</P></div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+            <div id="chart1-container" class="chart-container">
+                <canvas id="chart1"></canvas>
+            </div>
+            <div id="chart2-container" class="chart-container">
+                <canvas id="chart2"></canvas>
+            </div>
+            <div id="chart3-container" class="chart-container">
+                <canvas id="chart3"></canvas>
+            </div>
+            <div id="chart4-container" class="chart-container">
+                <canvas id="chart4"></canvas>
+            </div>
+            <script>
+                // 数据
+                const data1 = {
+                    labels: ['SRIMA', '决策树随机森林', 'LSTM', 'LSTM和随机森林混合'],
+                    datasets: [{
+                        label: 'RMSE 值',
+                        data: [4.3073, 3.1727, 2.2803, 1.5357],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                };
+
+                const data2 = {
+                    labels: ['SRIMA', '决策树随机森林', 'LSTM', 'LSTM和随机森林混合'],
+                    datasets: [{
+                        label: 'Acc 值',
+                        data: [0.611, 0.722, 0.805, 0.861],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                };
+
+                const data3 = {
+                    labels: ['SRIMA', '决策树随机森林', 'LSTM', 'LSTM和随机森林混合'],
+                    datasets: [{
+                        label: 'RMSE 值',
+                        data: [6.1851, 4.5405, 4.0405, 3.0958],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                };
+
+                const data4 = {
+                    labels: ['SRIMA', '决策树随机森林', 'LSTM', 'LSTM和随机森林混合'],
+                    datasets: [{
+                        label: 'Acc 值',
+                        data: [0.641, 0.743, 0.812, 0.895],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                };
+
+                // 配置
+                const config1 = {
+                    type: 'bar',
+                    data: data1,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '人力预测模型均方根误差（RMSE）'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '均方根误差（RMSE）'
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const config2 = {
+                    type: 'bar',
+                    data: data2,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '人力预测模型准确率（Acc）'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '准确率（Acc）'
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const config3 = {
+                    type: 'bar',
+                    data: data3,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '效益预测模型均方根误差（RMSE）'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '均方根误差（RMSE）'
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const config4 = {
+                    type: 'bar',
+                    data: data4,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '效益预测模型准确率（Acc）'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '准确率（Acc）'
+                                }
+                            }
+                        }
+                    }
+                };
+
+                // 初始化
+                window.onload = function() {
+                    var ctx1 = document.getElementById('chart1').getContext('2d');
+                    var ctx2 = document.getElementById('chart2').getContext('2d');
+                    var ctx3 = document.getElementById('chart3').getContext('2d');
+                    var ctx4 = document.getElementById('chart4').getContext('2d');
+                    new Chart(ctx1, config1);
+                    new Chart(ctx2, config2);
+                    new Chart(ctx3, config3);
+                    new Chart(ctx4, config4);
+                };
+            </script>
+
+
+            <br /> <br /> <br />
+
+        </nav>
+
+    </div>
+</div>
+
+
+<!-- END Page Content -->
+<!--END Wrapper -->
+<!-- BEGIN Scripts -->
+<script src="js/jquery.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/perfect-scrollbar.min.js"></script>
+<script src="js/common.js"></script>
+<!-- END Scripts -->
+
+</body>
+
+</html>

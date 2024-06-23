@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+<script src="js/common.js"></script>
+<!-- END Scripts -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>人力需求预测system</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        .background_image {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(34, 51, 75);
+            background-repeat: repeat;
+            z-index: 1;
+        }
+
+        .column_item { /* 每个流的处理 */
+            position: relative;
+            overflow: hidden;
+            width: 1530px;
+        }
+
+        /* 基础样式 */
+        section {
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 标题样式 */
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* 问题样式 */
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* 答案样式 */
+        .answer {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* 动画效果 */
+        .question:focus {
+            transform: scale(1.02);
+            transition: transform 0.35s ease;
+        }
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+<div class="head">
+    <div class="overlay"></div>
+    <div class="logo w1200"></div>
+</div>
+<div class="bodys"></div>
+
+<!-- BEGIN Wrapper -->
+<div class="wrapper">
+
+
+    <nav id="sidebar">
+        <ul class="list-unstyled components">
+            <br /> <br /> <br />
+            <li>
+                <ss><a href="./首页.html">首页</a></ss>
+            </li>
+
+            <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus2" data-toggle="collapse" aria-expanded="false">用户设置</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus2">
+                        <ss><a href="登录.html">登陆</a></ss>
+                        <ss><a href="登录.html">注册</a></ss>
+                    </ul>
+                </ss>
+            <li>
+                <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus" data-toggle="collapse" aria-expanded="false">基础建模</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus">
+                        <ss><a href="员工录入.html">员工信息录入</a></ss>
+                        <ss><a href="订单录入.html">公司订单录入</a></ss>
+                        <ss><a href="财报录入.html">企业财报录入</a></ss>
+                    </ul>
+                </ss>
+            </li>
+            <br />
+            <li>
+                <ss><a href="文件上传.html">人力预测</a></ss>
+            </li>
+            <br />
+
+            <li>
+                <ss><a href="数据集1.html">数据集展示</a></ss>
+
+            </li>
+
+
+            <br />
+
+            <li>
+                <ss><a href="员工离职倾向.html">数据拟合</a></ss>
+            </li>
+            <br />
+            <li>
+                <ss>
+                    <a href="#pageSubmenus55" data-toggle="collapse" aria-expanded="true">趋势预测</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenus55">
+                        <ss><a href="模型对比.html">模型比较</a></ss>
+                        <ss><a href="月度预测.html">月度预测</a></ss>
+                        <ss><a href="年度预测.html">年度预测</a></ss>
+                    </ul>
+                </ss>
+            </li>
+
+        </ul>
+        <div class="sidebar-footer">
+            <p class="social-icons">
+                <a target="_blank" href="#"><i class="fa fa-youtube"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-soundcloud"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+            </p>
+            <p>
+                <ss target="_blank" href=" " title="网页模板">联系方式</ss>
+            </p>
+        </div>
+    </nav>
+
+    <div id="content">
+
+        <div class="corner-box">
+            <br />
+            <div class="background_image2"></div>
+            <br />
+        </div>
+
+        <br /> <br />  <br />
+
+        <div class="column_split">
+            <div class="column_item">
+
+                <div class="background_image"></div>
+                <div class="input_wrapper">
+                    <br />
+                    <div class="admin-bar2">
+                        <p>平台介绍</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <nav id="sidebar3">
+            <br/>
+
+            <div class="admin-bar3">
+
+                <div class="banner-container">
+                    <img src="image/1.png"   alt=""/>
+                </div>
+
+                <div class="image">
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    <img src="image/999.png" width="1440" height="830" alt=""/>
+                </div>
+
+                <section>
+                    <h2>疑问解答</h2>
+                    <p class="question" tabindex="0">平台可接受的数据格式有哪些？</p>
+                    <div class="answer">
+                        作为一个企业人力预测系统，我们接受以下类型的数据格式：.csv, .xls, .xlsx, .xlsv, .txt。<br><br>
+                        这些数据集涵盖了员工的多种特征，包括年龄、是否离职、离家距离、教育程度、职位级别、月收入等。每一行代表一个员工的信息记录，包括他们的个人特征和工作情况。
+                        通过对数据集进行分析和建模，我们可以帮助企业了解员工的离职情况及影响因素，从而制定更好的人力资源管理策略。<br><br>
+                        此外，我们还接受公司订单数据和企业财报数据。公司订单数据包含了订单日期、客户、数量、单价、总价等，每一行代表了一笔订单的交易记录。而企业财报数据包括日期、收入、支出等，每一行代表了每个月公司的财务情况。通过分析和建模这些数据，我们可以更好地预测行业内部的效益情况，为企业制定更加有效的人力资源管理策略提供支持。
+                    </div>
+                    <p class="question" tabindex="0">平台提供哪些预测结果?</p>
+                    <div class="answer">
+                        员工离职倾向：通过分析员工的各种特征和工作情况，我们能够预测员工可能的离职倾向，帮助企业及时采取措施留住关键人才。<br><br>
+
+                        效益曲线：我们构建动态预测模型，能够提供企业内部人力波动和行业效益的输出曲线。这些曲线能够帮助企业管理者更好地了解行业内部趋势，及时调整人力资源配置，以适应市场变化。<br><br>
+
+                        人力预测：基于历史数据和趋势分析，我们提供精准的人力预测结果，帮助企业规划和调整人力资源，以满足业务需求和市场变化。<br><br>
+
+                    </div>
+                </section>
+
+            </div>
+        </nav>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const questions = document.querySelectorAll(".question");
+            questions.forEach(function(question) {
+                question.addEventListener("click", function() {
+                    const answer = this.nextElementSibling;
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                        animateAnswer(answer);
+                    }
+                });
+            });
+
+
+            function animateAnswer(answer) {
+                const text = answer.innerHTML.trim().split("");
+                let currentChar = '';
+                let int =0;
+                answer.innerHTML = ""; // 清空答案内容
+                text.forEach(function(char, index) {
+                    setTimeout(function() {
+                        if (char === "<" && text[index + 1] === "b" && text[index + 2] === "r" && text[index + 3] === ">") {
+                            const br = document.createElement("br");
+                            answer.appendChild(br); // 添加换行标签
+                            int=4;
+                        } else if(int===0) {
+                            answer.innerHTML += char; // 添加字符
+                        }else{
+                            currentChar += char;
+                            int-=1;
+                        }
+                    }, 20 * index);
+                });
+            }
+        });
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+
+
+</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Website title -->
+  <title>企业人力</title>
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <script src="js/plotly-latest.min.js"></script>
+
+  <style>
+    .chart-container {
+      position: absolute;
+      left: 65px;
+      right: 0;
+      width: 980px;
+      height: 550px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    #chart1 {
+      top: 315px;
+      z-index: 2;
+    }
+
+    #chart2 {
+      top: 960px;
+      z-index: 1;
+    }
+
+
+
+    .background_image2 { /* 右上块状元素的基础图片 */
+      content: "";
+      position: absolute;
+      top: 15px;
+      left:495px;
+      right: 0;
+      bottom: 0;
+      background-image:url('image/A.png');
+      background-repeat: no-repeat;
+      width: 1116px;
+      height: 155px;
+      z-index: 1;
+    }
+
+    .logo {
+      height: 58px;
+      background: url('image/tzdx.png') no-repeat ;
+      top: 10px;
+      left:20px;
+      position: absolute;
+      background-size: contain; /* 保持图片宽高比，完全显示在元素内 */
+      z-index: 1;
+    }
+
+
+
+  </style>
+</head>
+
+
+<body>
+<div class="head">
+  <div class="overlay"></div>
+  <div class="logo w1200"></div>
+</div>
+<div class="bodys"></div>
+
+<!-- BEGIN Wrapper -->
+<div class="wrapper">
+
+  <!-- BEGIN Sidebar -->
+  <nav id="sidebar2">
+    <div class="admin-bar">
+    </div>
+  </nav>
+
+  <nav id="sidebar">
+    <ul class="list-unstyled components">
+      <br /> <br /> <br />
+      <li>
+        <ss><a href="首页.html">首页</a></ss>
+      </li>
+
+      <br />
+      <li>
+        <ss>
+          <a href="#pageSubmenus2" data-toggle="collapse" aria-expanded="false">用户设置</a>
+          <ul class="collapse list-unstyled" id="pageSubmenus2">
+            <ss><a href="登录.html">登陆</a></ss>
+            <ss><a href="登录.html">注册</a></ss>
+          </ul>
+        </ss>
+      <li>
+        <br />
+      <li>
+        <ss>
+          <a href="#pageSubmenus" data-toggle="collapse" aria-expanded="false">基础建模</a>
+          <ul class="collapse list-unstyled" id="pageSubmenus">
+            <ss><a href="员工录入.html">员工信息录入</a></ss>
+            <ss><a href="订单录入.html">公司订单录入</a></ss>
+            <ss><a href="财报录入.html">企业财报录入</a></ss>
+          </ul>
+        </ss>
+      </li>
+      <br />
+      <li>
+        <ss><a href="文件上传.html">人力预测</a></ss>
+      </li>
+      <br />
+
+      <li>
+        <ss><a href="数据集1.html">数据集展示</a></ss>
+
+      </li>
+
+
+      <br />
+
+      <li>
+        <ss><a href="员工离职倾向.html">数据拟合</a></ss>
+      </li>
+      <br />
+      <li>
+        <ss>
+          <a href="#pageSubmenus55" data-toggle="collapse" aria-expanded="true">趋势预测</a>
+          <ul class="collapse list-unstyled" id="pageSubmenus55">
+            <ss><a href="模型对比.html">模型比较</a></ss>
+            <ss><a href="./月度预测.html">月度预测</a></ss>
+            <ss><a href="年度预测.html">年度预测</a></ss>
+          </ul>
+        </ss>
+      </li>
+
+    </ul>
+    <div class="sidebar-footer">
+      <p class="social-icons">
+        <a target="_blank" href="#"><i class="fa fa-youtube"></i></a>
+        <a target="_blank" href="#"><i class="fa fa-soundcloud"></i></a>
+        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+      </p>
+      <p>
+        <ss target="_blank" href=" " title="网页模板">联系方式</ss>
+      </p>
+    </div>
+  </nav>
+
+  <div id="content">
+
+
+    <div class="corner-box">
+      <br />
+      <div class="background_image2"></div>
+      <br />
+    </div>
+    <br />
+
+
+    <br /> <br />
+
+
+    <nav id="sidebar33">
+
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="fa fa-soundcloud"></i></div>
+              <div class="stat-content dib">
+                <div class="stat-text">2023年总利润</div>
+                <div class="stat-digit">221,012</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="fa fa-facebook"></i></div>
+              <div class="stat-content dib">
+                <div class="stat-text">总员工</div>
+                <div class="stat-digit">161</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="fa fa-twitter"></i></div>
+              <div class="stat-content dib">
+                <div class="stat-text">经营项目</div>
+                <div class="stat-digit">25</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="fa fa-google-plus"></i></div>
+              <div class="stat-content dib">
+                <div class="stat-text">资金储备</div>
+                <div class="stat-digit">3,242,781</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">预测图表</h3>
+        </div>
+      </div>
+
+      <br /> <br />         <br /> <br />      <br /> <br />
+      <div class="row">
+
+          <div class="card2">
+            <div class="stat-text"><p1>月度预测结果</p1></div>
+            <div class="stat-digit"><P>企业可以更有效地进行人力资源的配置和调整，避免人力资源的浪费或短缺，从而提高企业的市场竞争力。</P></div>
+          </div>
+
+      </div>
+
+      <br /> <br />         <br /> <br />      <br /> <br />    <br /> <br />  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+      <br /> <br />    <br /> <br />
+      <div class="row">
+
+        <div class="card2">
+          <div class="stat-text"><p1>行业效益预测结果</p1></div>
+          <div class="stat-digit"><P>构建动态预测模型，提供企业内部人力波动和行业效益的输出曲线，使企业能够根据变化趋势灵活调整人力资源配置。</P></div>
+        </div>
+
+      </div>
+
+
+      <div id="chart1" class="chart-container"></div>
+      <div id="chart2" class="chart-container"></div>
+
+      <script>
+        // 第一个图表的数据
+        var actualData1 = [
+          0.0, -3.0, -2.0, -2.0, -2.0, 4.0, -1.0, -1.0, 4.0, 5.0, -9.0, -3.0,
+          3.0, -1.0, -2.0, 1.0, 0.0, 0.0, 8.0, -4.0, 1.0, 0.0, 1.0, -3.0,
+          -2.0, 8.0, -7.0, 2.0, 1.0, 0.0, -4.0, 0.0, -1.0, 5.0, -3.0, 2.0
+        ];
+        var forecastData1 = [
+          0.0, -2.54, -2.999859, -2.000101, -1.999961, 0.943, 0.099723, -0.999658,
+          3.000132, 3.999819, -6.000014, -4.999326, 2.000407, -0.090141, -0.991818,
+          0.558631, -0.606708, 1.914032, 6.128403, -2.943348, 1.948598, 1.065410,
+          2.551620, -4.059605, -3.819716, 6.908139, -6.307847, 1.598838, 0.637489,
+          2.677025, -5.900000, 1.081741, -1.823313, 4.0779698, -3.947368, -2.545815
+        ];
+        var additionalForecastData1 = [
+          -0.940404, 3.721762, -3.713510, 1.366253, 0.543568, 1.941969,
+          0.715859, -0.595484, 1.743632, 4.442217, -3.025649, -0.068761
+        ];
+
+        var dates1 = [
+          '2021-01-31', '2021-02-28', '2021-03-31', '2021-04-30', '2021-05-31', '2021-06-30',
+          '2021-07-31', '2021-08-31', '2021-09-30', '2021-10-31', '2021-11-30', '2021-12-31',
+          '2022-01-31', '2022-02-28', '2022-03-31', '2022-04-30', '2022-05-31', '2022-06-30',
+          '2022-07-31', '2022-08-31', '2022-09-30', '2022-10-31', '2022-11-30', '2022-12-31',
+          '2023-01-31', '2023-02-28', '2023-03-31', '2023-04-30', '2023-05-31', '2023-06-30',
+          '2023-07-31', '2023-08-31', '2023-09-30', '2023-10-31', '2023-11-30', '2023-12-31',
+          '2024-01-31', '2024-02-29', '2024-03-31', '2024-04-30', '2024-05-31', '2024-06-30',
+          '2024-07-31', '2024-08-31', '2024-09-30', '2024-10-31', '2024-11-30', '2024-12-31'
+        ];
+
+        var data1 = [{
+          x: [],
+          y: [],
+          mode: 'lines+markers',
+          marker: { color: 'blue' },
+          line: { shape: 'linear' },
+          name: '实际人员变化'
+        },
+          {
+            x: [],
+            y: [],
+            mode: 'lines+markers',
+            marker: { color: 'green' },
+            line: { shape: 'linear' },
+            name: '未来预测人员变化'
+          },
+          {
+            x: dates1.slice(0, 36),
+            y: forecastData1,
+            mode: 'lines',
+            line: { dash: 'dash', color: 'red' },
+            name: '历史数据预测'
+          }];
+
+        var layout1 = {
+          title: '月度人员变化预测',
+          xaxis: {
+            title: '日期'
+          },
+          yaxis: {
+            title: '人员变化'
+          },
+          margin: {
+            l: 50,
+            r: 50,
+            b: 50,
+            t: 50,
+            pad: 4
+          },
+          showlegend: true
+        };
+
+        // 绘制第一个图表
+        Plotly.newPlot('chart1', data1, layout1);
+
+        // 动态绘制第一个图表效果
+        var cnt1 = 0;
+        var interval1 = setInterval(function() {
+          if(cnt1 < actualData1.length) {
+            data1[0].x.push(dates1[cnt1]);
+            data1[0].y.push(actualData1[cnt1]);
+          } else if (cnt1 < dates1.length) {
+            data1[1].x.push(dates1[cnt1]);
+            data1[1].y.push(additionalForecastData1[cnt1 - actualData1.length]);
+          } else {
+            clearInterval(interval1);
+          }
+          Plotly.update('chart1', data1, layout1);
+          cnt1++;
+        }, 50); // 每100毫秒添加一个数据点
+
+        // 第二个图表的数据
+        var actualData2 = [26.243, 28.481, 23.547, 30.708, 20.527, 41.013, 29.891, 19.199, 35.631, 27.576, 38.269, 22.275,
+          29.276, 25.118, 29.762, 38.625, 26.455, 25.240, 43.752, 25.743, 34.799, 23.590, 30.058, 31.792,
+          31.676, 25.542, 20.619, 19.570, 24.065, 21.120, 38.212, 29.426, 32.465, 22.498, 38.476, 23.048,
+          46.555, 24.421, 33.146, 25.841, 29.821, 29.321, 27.281, 21.500, 25.941, 27.284, 24.093, 22.389];
+
+        var forecastData2 = [25.412, 27.348, 23.132, 27.300, 21.515, 39.412, 29.120, 20.412, 38.930, 28.017, 34.154, 20.548,
+          26.412, 26.734, 28.086, 34.413, 28.975, 20.790, 38.172, 24.402, 38.738, 21.868, 33.247, 26.547,
+          30.412, 27.412, 18.977, 24.412, 27.299, 23.294, 39.243, 20.055, 34.862, 28.358, 35.741, 25.444,
+          42.412, 28.012, 32.971, 22.543, 28.197, 29.288, 26.412, 24.740, 27.512, 25.012, 20.745, 23.253];
+
+        var additionalForecastData2 = [23.253, 20.184, 22.574, 22.147, 21.170, 22.843, 27.806, 19.259, 25.212, 28.452, 25.341, 27.513];
+
+        var dates2 = [
+          '2020-01', '2020-02', '2020-03', '2020-04', '2020-05', '2020-06', '2020-07', '2020-08', '2020-09', '2020-10', '2020-11', '2020-12',
+          '2021-01', '2021-02', '2021-03', '2021-04', '2021-05', '2021-06', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12',
+          '2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-06', '2022-07', '2022-08', '2022-09', '2022-10', '2022-11', '2022-12',
+          '2023-01', '2023-02', '2023-03', '2023-04', '2023-05', '2023-06', '2023-07', '2023-08', '2023-09', '2023-10', '2023-11', '2023-12',
+          '2024-01', '2024-02', '2024-03', '2024-04', '2024-05', '2024-06', '2024-07', '2024-08', '2024-09', '2024-10', '2024-11', '2024-12'
+        ];
+
+        var data2 = [{
+          x: [],
+          y: [],
+          mode: 'lines+markers',
+          marker: { color: 'blue' },
+          line: { shape: 'linear' },
+          name: '实际企业收入'
+        },
+          {
+            x: [],
+            y: [],
+            mode: 'lines+markers',
+            marker: { color: 'orange' },
+            line: { shape: 'linear' },
+            name: '预测企业收入'
+          },
+          {
+            x: [],
+            y: [],
+            mode: 'lines+markers',
+            marker: { color: 'red' },
+            line: { shape: 'linear', dash: 'dot' },
+            name: '历史数据预测'
+          }];
+
+        var layout2 = {
+          title: '月度企业收入变化预测',
+          xaxis: {
+            title: '日期'
+          },
+          yaxis: {
+            title: '企业收入（万元）'
+          },
+          margin: {
+            l: 50,
+            r: 50,
+            b: 50,
+            t: 50,
+            pad: 4
+          }
+        };
+
+        // 绘制第二个图表
+        Plotly.newPlot('chart2', data2, layout2);
+
+        // 动态绘制第二个图表效果
+        var cnt2 = 0;
+        var interval2 = setInterval(function() {
+          if (cnt2 < actualData2.length) {
+            data2[0].x.push(dates2[cnt2]);
+            data2[0].y.push(actualData2[cnt2]);
+            data2[2].x.push(dates2[cnt2]);
+            data2[2].y.push(forecastData2[cnt2]);
+            Plotly.update('chart2', data2, layout2);
+            cnt2++;
+          } else if (cnt2 < actualData2.length + additionalForecastData2.length) {
+            var idx = cnt2 - actualData2.length;
+            data2[1].x.push(dates2[cnt2]);
+            data2[1].y.push(additionalForecastData2[idx]);
+            Plotly.update('chart2', data2, layout2);
+            cnt2++;
+          } else {
+            clearInterval(interval2);
+          }
+        }, 50); // 每100毫秒添加一个数据点
+
+      </script>
+
+
+
+
+      <br /> <br /> <br />
+
+    </nav>
+
+  </div>
+</div>
+
+
+<!-- END Page Content -->
+<!--END Wrapper -->
+<!-- BEGIN Scripts -->
+<script src="js/jquery.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/perfect-scrollbar.min.js"></script>
+<script src="js/common.js"></script>
+<!-- END Scripts -->
+
+</body>
+
+</html>
