@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人简历</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      padding: 20px;
+      color: #374151;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(45deg, #3b82f6, #2563eb);
+      color: white;
+      padding: 30px;
+    }
+    .header img {
+      width: 140px;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .info-item .icon {
+      font-size: 1.2rem;
+      margin-right: 8px;
+    }
+    .resume-title {
+      position: absolute;
+      top: 120px;
+      right: 510px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      transform: rotate(-10deg);
+    }
+    .content {
+      padding: 30px;
+      position: relative;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      color: #2563eb;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+    .section h3 {
+      font-size: 1.3rem;
+      color: #374151;
+      margin-bottom: 10px;
+    }
+    .section p, .section ul li {
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+    .section ul {
+      margin-left: 20px;
+    }
+    .section ul  li {
+      list-style-type:none;
+      position: relative;
+      padding-left: 30px; /* 留出空间给自定义符号 */
+      margin-bottom: 10px;
+    }
+    .section li::before {
+      content: '⭐'; /* 自定义符号，可以是 Unicode 字符或其他内容 */
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem; /* 调整符号大小 */
+      color: #2563eb; /* 调整符号颜色 */
+    }
+    .honors-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .honors-list li {
+      list-style-type:none;
+      display: flex;
+      align-items: center;
+      padding: 14px 0;
+      font-size: 1rem;
+    }
+    .bullet-point {
+      font-size: 1.3rem;
+      margin-right: 12px;
+      color: #2563eb;
+    }
+    .education-section h3 {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .school-info {
+      font-weight: bold;
+      color: #111827;
+    }
+    .education-dates {
+      font-style: italic;
+      color: #6b7280;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Header with image and info -->
+  <div class="header">
+    <img src="https://picx.zhimg.com/v2-de6b598a989472c2aca62ac8835dfef5_hd.jpg" alt="头像">
+    <div class="info">
+      <div class="info-item">
+        <span class="icon">🎂</span>
+        <span>22岁</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">📍</span>
+        <span>江苏扬州</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">✉️</span>
+        <span>rancao1227@foxmail.com</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">📞</span>
+        <span>13270589717</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">💬</span>
+        <span>13270589717(微信)</span>
+      </div>
+    </div>
+    <div class="resume-title">个&nbsp;人&nbsp;简&nbsp;历</div> <!-- 个人简历标题 -->
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <!-- Education Section -->
+    <div class="section">
+      <h2>教育背景</h2>
+      <div class="education-section">
+        <h3>
+          <span class="school-info">扬州大学信息工程学院 - 软件工程</span>
+          <span class="education-dates">2021.9 - 2025.6</span>
+        </h3>
+      </div>
+      <p>学分绩点3.72（专业排名前10%），专业平均分87.25</p>
+      <p>主修课程：操作系统, 计算机通信与网络, 数据库系统原理, 数据结构, 面向对象程序设计, 机器学习等。</p>
+    </div>
+
+    <!-- Project Experience Section -->
+    <div class="section">
+      <h2>项目经验</h2>
+      <div class="education-section">
+        <h3>
+          <span class="school-info">恶意用户检测平台 - 项目负责人</span>
+          <span class="education-dates">2023.3 - 2023.9</span>
+        </h3>
+      </div>
+      <ul>
+        <li>项目描述：开发了基于社交网络用户行为分析的恶意用户检测平台，采用图神经网络（GNN）技术来识别并阻止恶意用户的攻击行为，提升了检测的准确性和效率。后端由Python驱动，前端使用HTML5构建。</li>
+        <li>技术应用：实现了基于Python的图神经网络模型，对社交网络数据进行特征提取和分类；应用Pandas和NumPy进行数据预处理，使用PyTorch构建和训练模型。</li>
+        <li>项目业绩：网络技术挑战赛华东赛区三等奖，在《软件导刊》上发表了相关研究论文，取得了软件著作权。</li>
+      </ul>
+      <div class="education-section">
+        <h3>
+          <span class="school-info">企业人力需求预测系统 - 技术负责人</span>
+          <span class="education-dates">2023.10 - 2024.4</span>
+        </h3>
+      </div>
+      <ul>
+        <li>项目描述：企业人力需求预测系统旨在解决企业在人力资源管理方面面临的挑战，提高企业人力资源管理的科学性和有效性。使用Python开发，基于机器学习框架（如PyTorch和TensorFlow）构建预测模型；前端采用Vue.js实现数据可视化与用户交互。系统涵盖数据录入、数据拟合、趋势预测等功能。</li>
+        <li>算法与模型：利用Python实现数据清洗与特征工程，使用LSTM和 Transformer深度学习模型进行时间序列预测，并通过交叉验证和网格搜索优化模型参数。</li>
+
+      </ul>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section">
+      <h2>技能</h2>
+      <ul>
+        <li>Python与机器学习：熟练掌握Python编程，精通机器学习与深度学习算法</li>
+        <li>数据处理与分析：具备使用Pandas、NumPy进行数据处理和分析的经验</li>
+        <li>其他编程语言：熟悉C、C++、Java、JavaScript</li>
+        <li>Web开发：具有前端开发经验，熟悉Vue.js框架和现代前端技术</li>
+      </ul>
+    </div>
+
+    <!-- Honors and Awards Section -->
+    <div class="section2">
+      <h2>荣誉与奖项</h2>
+      <ul class="honors-list">
+        <li>
+          <span class="bullet-point">🏅</span> 获得计算机软件著作权
+        </li>
+        <li>
+          <span class="bullet-point"></span> 参加江苏省省级大学生创新创业训练计划项目
+        </li>
+        <li>
+          <span class="bullet-point"></span> 获得网络技术挑战赛华东地区三等奖
+        </li>
+        <li>
+          <span class="bullet-point">🏅</span> 多次获得校长奖学金及荣誉奖项
+        </li>
+        <li>
+          <span class="bullet-point"></span> 全国大学生数学建模竞赛获优秀奖
+        </li>
+        <li>
+          <span class="bullet-point"></span> 通过全国大学英语六级考试（CET-6）
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
