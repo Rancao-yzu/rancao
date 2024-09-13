@@ -126,6 +126,94 @@
       font-style: italic;
       color: #6b7280;
     }
+    @media (max-width: 468px) {
+      .container {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none; /* 在极小屏幕上可能不需要阴影 */
+      }
+      .header img {
+        width: 60px; /* 更小的图片尺寸 */
+        height: 80px;
+      }
+      .info {
+        flex-direction: column;
+      }
+      .info-item {
+        margin-bottom: 3px;
+        font-size: 0.7rem; /* 更小的字体大小 */
+      }
+      .icon {
+        font-size: 0.9rem; /* 更小的图标大小 */
+      }
+      .resume-title {
+        font-size: 1.5rem; /* 更小的标题字体大小 */
+        margin-top: 5px;
+      }
+      .content {
+        padding: 5px; /* 更小的内边距 */
+      }
+      .section h2 {
+        font-size: 1.1rem; /* 更小的标题字体大小 */
+      }
+      .section h3 {
+        font-size: 0.9rem; /* 更小的子标题字体大小 */
+      }
+      .section p, .section ul li {
+        font-size: 0.7rem; /* 更小的段落和列表字体大小 */
+      }
+      .honors-list li {
+        font-size: 0.7rem; /* 更小的荣誉列表字体大小 */
+      }
+      .bullet-point {
+        font-size: 0.9rem; /* 更小的荣誉列表图标大小 */
+      }
+    }
+    
+    @media (max-width: 780px) {
+      .container {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+      }
+      .header img {
+        width: 80px;
+        height: 100px;
+      }
+      .info {
+        flex-direction: column;
+      }
+      .info-item {
+        margin-bottom: 5px;
+        font-size: 0.8rem; /* 减小字体大小 */
+      }
+      .icon {
+        font-size: 1rem; /* 减小图标大小 */
+      }
+      .resume-title {
+        font-size: 1.8rem; /* 减小标题字体大小 */
+        margin-top: 10px;
+      }
+      .content {
+        padding: 10px; /* 减小内边距 */
+      }
+      .section h2 {
+        font-size: 1.2rem; /* 减小标题字体大小 */
+      }
+      .section h3 {
+        font-size: 1rem; /* 减小子标题字体大小 */
+      }
+      .section p, .section ul li {
+        font-size: 0.8rem; /* 减小段落和列表字体大小 */
+      }
+      .honors-list li {
+        font-size: 0.8rem; /* 减小荣誉列表字体大小 */
+      }
+      .bullet-point {
+        font-size: 1rem; /* 减小荣誉列表图标大小 */
+      }
+    }
 
 
   </style>
@@ -157,7 +245,7 @@
         <span>13270589717(微信)</span>
       </div>
     </div>
-    <div class="resume-title">个&nbsp;人&nbsp;简&nbsp;历</div> <!-- 个人简历标题 -->
+
   </div>
 
   <!-- Content Section -->
